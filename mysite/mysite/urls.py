@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views # Import the views module from the same directory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'), # Add a URL pattern for the home page
+    path('about',views.about, name='about'), # Added anout page after updating the views.py
+    path('tutorial_video', views.tutorial_video, name='tutorial') # Added anout page after updating the views.py
 ]
