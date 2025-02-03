@@ -20,7 +20,11 @@ from . import views # Import the views module from the same directory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'), # Add a URL pattern for the home page
-    path('about',views.about, name='about'), # Added anout page after updating the views.py
-    path('tutorial_video', views.tutorial_video, name='tutorial') # Added anout page after updating the views.py
+    path('', views.index, name='index'),
+    path('removepunc', views.removepunc, name='removepunc'),
+    path('capitalizefirst', views.capitalizefirst, name='capitalizefirst'),
+    path('newlineremove', views.newlineremove, name='newlineremove'),
+    path('spaceremove', views.spaceremove, name='spaceremove'),
+    path('charcount', views.charcount, name='charcount'),
+
 ]
