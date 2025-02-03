@@ -1,10 +1,25 @@
 #File Creted by me
 from django.http import HttpResponse
+from django.shortcuts import render
+
 def index(request):
-    return HttpResponse("<h1>Hello, world. You're at the mysite index.</h1>") # Return a string as an HTTP response
+    
+    return render(request, 'index.html')
 
-def about(request):
-    return HttpResponse("Hello,You're at about page of mysite.") # Return a string as an HTTP response
+def removepunc(request):
+    #Get the text from the user and analyze it
+    djtext=(request.GET.get('text', 'default'))
+    print(djtext)
+    return HttpResponse("<h3>Remove punchuation.</h3>")
 
-def tutorial_video(request):
-    return HttpResponse('''<a href="https://www.youtube.com/watch?v=AepgWsROO4k&list=PLu0W_9lII9ah7DDtYtflgwMwpT3xmjXY9&index=7">Tutorial video source</a>''') # Return a string as an HTTP response
+def capitalizefirst(request):
+    return HttpResponse("<h3>capitalizefirst.</h3>")
+
+def newlineremove(request):
+    return HttpResponse("<h3>newlineremove.</h3>")
+
+def spaceremove(request):
+    return HttpResponse("<h3>spaceremove.</h3>")
+
+def charcount(request):
+    return HttpResponse("<h3>charcount.</h3>")
