@@ -21,10 +21,10 @@ from . import views # Import the views module from the same directory
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('removepunc', views.removepunc, name='removepunc'),
-    path('capitalizefirst', views.capitalizefirst, name='capitalizefirst'),
-    path('newlineremove', views.newlineremove, name='newlineremove'),
-    path('spaceremove', views.spaceremove, name='spaceremove'),
-    path('charcount', views.charcount, name='charcount'),
+    path('Analyize', views.Analyize, name='Analyize'),
+    # path('capitalizefirst', views.capitalizefirst, name='capitalizefirst'),
+    # path('newlineremove', views.newlineremove, name='newlineremove'),
+    # path('spaceremove', views.spaceremove, name='spaceremove'),
+    # path('charcount', views.charcount, name='charcount'),
 
 ]
