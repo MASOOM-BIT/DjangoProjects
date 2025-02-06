@@ -14,3 +14,64 @@ def about(request):
 def tutorial_video(request):
     return HttpResponse('''<a href="https://www.youtube.com/watch?v=AepgWsROO4k&list=PLu0W_9lII9ah7DDtYtflgwMwpT3xmjXY9&index=7">Tutorial video source</a>''') # Return a string as an HTTP response
 '''
+-----------------------------------------------------------------------------------------------------------------
+Anlytics.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 50px;">
+
+    <h1 style="color: #333;">Your Analyzed Text - {{ purpose }}</h1>
+
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); display: inline-block; max-width: 80%; margin: auto;">
+        <p style="font-size: 18px; color: #444; line-height: 1.6; padding: 10px;">
+            {{ analyzed_text }}
+        </p>
+    </div>
+
+</body>
+</html>
+-----------------------------------------------------------------------------------------------------------
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 50px;">
+
+    <h1 style="color: #333;">Welcome to Text Analyzer</h1>
+    <p style="font-size: 18px; color: #666;">Enter your text below and choose the transformations</p>
+
+    <form action="/Analyize" method="get" style="width: 1193px; height: 158px; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); display: inline-block;">
+        <textarea name="text" style="width: 100%; height: 150px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+        <br><br>
+
+        <label style="display: block; margin: 5px 0;">
+            <input type="checkbox" name="removepunc"> Remove Punctuation
+        </label>
+        <label style="display: block; margin: 5px 0;">
+            <input type="checkbox" name="fullcaps"> UPPERCASE
+        </label>
+        <label style="display: block; margin: 5px 0;">
+            <input type="checkbox" name="newlineremover"> New Line Remover
+        </label>
+        <label style="display: block; margin: 5px 0;">
+            <input type="checkbox" name="extraspaceremover"> Extra Spaces Remover
+        </label>
+        <label style="display: block; margin: 5px 0;">
+            <input type="checkbox" name="charcount"> Character Count
+        </label>
+        <br>
+
+        <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px;">Analyze Text</button>
+    </form>
+
+</body>
+</html>
