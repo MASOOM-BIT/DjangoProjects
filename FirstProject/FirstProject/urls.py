@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from firstApp import fa
-from quoteApp import qa
+from quoteApp import qau
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', fa.display,name='display'),
     path('datetime/',fa.displayDateTime,name='displayDateTime'),
-    path('quote/',qa.displayQuote,name='displayQuote'),
+    path('quote/',qau.displayQuote,name='displayQuote'),
 ]
