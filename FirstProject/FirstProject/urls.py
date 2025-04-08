@@ -15,12 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from firstApp import fa
-from quoteApp import qau
+from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', fa.display,name='display'),
-    path('datetime/',fa.displayDateTime,name='displayDateTime'),
-    path('quote/',qau.displayQuote,name='displayQuote'),
+    path('firstApp/', include('firstApp.urls')),
+    path('quoteApp/', include('quoteApp.urls')),
 ]
