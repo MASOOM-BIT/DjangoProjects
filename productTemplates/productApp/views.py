@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 def electronics(request):
     product_dict={
+        'heading':'Electronics',
         'product1':'Laptop',
         'product2':'Mobile',
         'product3':'Tablet',
@@ -12,6 +13,7 @@ def electronics(request):
 
 def toys(request):
     product_dict={
+        'heading':'Toys',
         'product1':'Teddy Bear',
         'product2':'Car',
         'product3':'Doll',
@@ -21,6 +23,7 @@ def toys(request):
 
 def shoes(request):
     product_dict={
+        'heading':'Shoes',
         'product1':'Nike',
         'product2':'Jordan',
         'product3':'Addidas',
