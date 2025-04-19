@@ -48,3 +48,20 @@ class Employee(models.Model):
 # Employee.objects.aggregate(Max('salary')) -> get maximum salary of Employee objects
 # Employee.objects.aggregate(Min('salary')) -> get minimum salary of Employee objects
 # Employee.objects.aggregate(Count('salary')) -> get count of Employee objects with salary
+
+# --------count object-----------------
+# Employee.objects.count() -> get count of Employee objects
+# Employee.objects.filter(salary__gt=5000).count() -> get count of Employee objects with salary greater than 5000
+
+# create and bulk create---------------
+# Employee.objects.create(firstName='Mas',lastName='xy',salary=5000,
+
+# bulk=-> Employee.objects.bulk_create([Employee(firstName='Mas',lastName='xy',salary=5000,
+# ------------delete-------
+# Employee.objects.filter(id=1).delete() -> delete Employee object with id=1
+# -----------update------------
+# Employee.objects.filter(id=1).update(salary=6000) -> update salary of Employee object with id=1 to 6000
+# Employee.objects.filter(id=1).update(salary=F('salary')+1000) -> update salary of Employee object with id=1 to salary+1000
+# ----------------order by ------------
+# Employee.objects.all().order_by('salary') -> order Employee objects by salary in ascending order
+# Employee.objects.all().order_by('-salary') -> order Employee objects by salary in descending order
