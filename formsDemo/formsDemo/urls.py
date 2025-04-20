@@ -19,5 +19,5 @@ from django.urls import path
 from formsApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('userRV/', views.userRegistrationView, name='userRegistrationView')
+    path('userRegistrationView/', views.userRegistrationView, name='userRegistrationView')
 ]
