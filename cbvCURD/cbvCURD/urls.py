@@ -23,4 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', StudentListView.as_view(), name='StudentListView'),
     path('<int:pk>/', views.StudentDetailView.as_view(), name='StudentDetailView'),
+    path('create/', views.StudentCreateView.as_view(), name='StudentCreateView'),
+    path('update/<int:pk>/', views.StudentUpdateView.as_view(), name='StudentUpdateView'),
+    path('delete/<int:pk>/', views.StudentDeleteView.as_view(), name='StudentDeleteView'),
+
 ]
