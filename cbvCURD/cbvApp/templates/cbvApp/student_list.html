@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends "cbvApp/base.html" %} {% block body_block %}
+{% load custFilters%}
 <h1>Students List :</h1>
 <table class="table">
   <thead>
@@ -14,8 +15,8 @@
     {% for student in student_list %}
     <tr>
       <td><a href="/{{student.id}}">{{student.id}}</a></td>
-      <td>{{student.firstName | lower}}</td>
-      <td>{{student.lastName}}</td>
+      <td>{{student.firstName | custAppend:"Mr "}}</td>
+      <td>{{student.lastName | custLower}}</td>
       <td>{{student.testScore | add:"2"}}</td>
       <td>
         <a class="btn btn-primary" href="/delete/{{student.id}}">Delete</a>
