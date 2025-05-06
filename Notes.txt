@@ -75,3 +75,17 @@ index.html:
 
 </body>
 </html>
+---------------------------
+HTTP is stateless (gajani)
+it only handles one request at a time and did not remmber the last request when it responses
+.
+thus is increases profemance and good for 
+------Session Management---------
+to maintain the state Despite the statelessness of HTTP
+ Session
+ -- login to logout
+ -- track user intraction(visting to exit)
+ ------Django session tracking---
+  --cookie
+  -- every request in django create a unique session id to track
+
