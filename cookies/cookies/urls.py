@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cookiesApp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', views.index, name='index'),
+    path('page2/', views.page2, name='page2'),
+    path('count/', views.countView, name='countView'),
 ]
