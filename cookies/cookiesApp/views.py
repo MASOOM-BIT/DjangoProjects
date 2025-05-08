@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from forms import ItemForm
 # Create your views here.
 def index(request):
     request.session.set_test_cookie()
@@ -24,3 +24,22 @@ def countView(request):
     # 
     response.set_cookie('count', count)
     return response
+
+def indexView(request):
+    return render(request, 'cookiesApp/indexView.html')
+def addItem(request):
+    form = ItemForm()
+    response = render(request, 'cookiesApp/addItem.html', {'form': form})
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            item_name = form.cleaned_data['name']
+            item_quantity = form.cleaned_data['quantity']
+            response.set_cookie(item_name, item_quantity,120)
+    return response
+    
+
+def displayView(request):
+    return render(request, 'cookiesApp/displayView.html', {'cookies': request.COOKIES})
+
+
