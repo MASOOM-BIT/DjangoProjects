@@ -24,4 +24,7 @@ urlpatterns = [
     path('home/', views.index, name='index'),
     path('page2/', views.page2, name='page2'),
     path('count/', views.countView, name='countView'),
+    path('', views.indexView, name='indexView'),
+    path('addItem/', views.addItem, name='addItem'),
+    path('displayView/', views.displayView, name='displayView'),
 ]
