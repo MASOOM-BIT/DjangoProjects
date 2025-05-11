@@ -10,7 +10,8 @@ def pageCount(request):
 
 def indexView(request):
     request.session.set_expiry(120)
-    del request.session['count']
+    raise Exception("This is a test exception")
+    # return HttpResponse("This is the index view")
     return render(request, 'sessionApp/index.html')
 
 def addItem(request):
