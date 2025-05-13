@@ -34,3 +34,6 @@ def updateStudent(request,id):
             form.save()
             return redirect('/')
     return render(request, 'fbvApp/update.html', {'form': form})
+
+def logout(request):
+    return render(request, 'fbvApp/logout.html')
