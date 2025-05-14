@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from fbvApp.models import Student
 from fbvApp.forms import StudentForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,permission_required
 # Create your views here.
 
 @login_required
@@ -20,6 +20,7 @@ def createStudent(request):
     return render(request, 'fbvApp/create.html', {'form': form})
 
 @login_required
+@permission_required('fbvApp.delete_student')
 def deleteStudent(request,id):
     student = Student.objects.get(id=id)
     student.delete()
