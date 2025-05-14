@@ -7,6 +7,23 @@ class Employee(models.Model):
     salary = models.FloatField(default=0.0)
     email = models.EmailField(max_length=50, unique=True)
 
+class Programmer(models.Model):
+    name = models.CharField(max_length=30)
+    salary = models.FloatField(default=0.0)
+
+class Project(models.Model):
+    name = models.CharField(max_length=30)
+    programmers = models.ManyToManyField(Programmer)
+
+# project = Project(name = 'modeldemo')
+
+# In [7]: project.save()
+
+# In [8]: project.programmers.add(p1)
+
+# In [9]: project.programmers.add(p2)
+
+# In [10]: project.save()
 
 # python manage.py shell-------------
 # from empApp.models import Employee -> import Employee
