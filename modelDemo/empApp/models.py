@@ -15,6 +15,30 @@ class Project(models.Model):
     name = models.CharField(max_length=30)
     programmers = models.ManyToManyField(Programmer)
 
+class Customer(models.Model):
+    name = models.CharField(max_length=30)
+    
+class PhoneNumber(models.Model):
+    type = models.CharField(max_length=30)
+    number = models.CharField(max_length=15)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+class Person(models.Model):
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    age = models.IntegerField()
+
+class License(models.Model):
+    type = models.CharField(max_length=30)
+    validFrom = models.DateField()
+    validTo = models.DateField()
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
+# In [1]: from empApp.models import Employee, Programmer, Project
+# In [2]: p1 = Programmer(name='Mas', salary=5000)
+# In [3]: p2 = Programmer(name='xy', salary=6000)
+# In [4]: p1.save()
+# In [5]: p2.save()
+
 # project = Project(name = 'modeldemo')
 
 # In [7]: project.save()
