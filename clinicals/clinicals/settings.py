@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'clinicals.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'employeedb',
+        'NAME': 'clinicalsdb',
         'USER': 'root',
         'PASSWORD': 'root'
     }
