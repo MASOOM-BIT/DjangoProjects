@@ -25,4 +25,5 @@ urlpatterns = [
     path('update/<int:pk>/', PatientUpdateView.as_view(), name='PatientUpdateView'),
     path('delete/<int:pk>/', PatientDeleteView.as_view(), name='PatientDeleteView'),
     path('addData/<int:pk>/', views.addData, name='addData'),
+    path('analyze/<int:pk>/', views.analyze, name='analyze'),
 ]
